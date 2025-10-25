@@ -1,6 +1,7 @@
 /**
  * HashTable.h
  */
+#include <optional>
 #include <string>
 #include <vector>
 
@@ -10,6 +11,9 @@ using namespace std;
 class HashTable
 {
 private:
+    size_t tableSize;
+    vector<string> tableData;
+
 
 public:
     /**
@@ -43,7 +47,7 @@ public:
     * signify the return value is invalid. It's also much better than throwing an
     * exception if the key is not found.
     */
-    std::optional<int> HashTable::get(const string& key) const;
+    optional<int> HashTable::get(const string& key) const;
     /**
     * The bracket operator lets us access values in the map using a familiar syntax,
     * similar to C++ std::map or Python dictionaries. It behaves like get, returnin

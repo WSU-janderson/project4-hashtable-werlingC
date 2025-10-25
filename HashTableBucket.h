@@ -1,14 +1,22 @@
 //
 // Created by carma on 10/25/2025.
 //
+#include <string>
+#include <cstddef>
 
 #ifndef HASHTABLE_HASHTABLEBUCKET_H
 #define HASHTABLE_HASHTABLEBUCKET_H
 
+//Simple enum class to keep track of whether the bucket is filled, empty since the start, or empty after removal
+enum class BucketType {NORMAL, ESS, EAR};
 
 class HashTableBucket
 {
 private:
+    //the status of the bucket. Tells whether the current index contains a value, has been empty from the start, or is empty after a removal
+    BucketType status;
+    size_t value;
+
 
 public:
     /**
